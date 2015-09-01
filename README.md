@@ -12,6 +12,8 @@ A nice git set-up tutorial are written nicely by one of my profs, Dr. Kooima, [h
     3. git push origin master
 
 * Other useful commands
+    - ``` git status ``` outputs status of files (changes made, modifications pushed or not pushed, etc.)
     - ``` git pull ``` pulls any changes made to the master repo
     - ``` git remote show origin ``` shows the info of the master branch you are working from
     - ``` git branch --set-upstream master= origin/master``` explicitly setting origin master
+
