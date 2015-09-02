@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- <html ng-app='map'> -->
+<html ng-app='mapApp'>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rewritten Map App</title>
+
+	<script type="text/javascript" src='static/js/crossfilter.js'></script>
+	<script type="text/javascript" src='static/js/jquery.js'></script>
+	<script type="text/javascript" src='static/js/tipsy.js'></script>
+	<script type="text/javascript" src='static/js/d3.js'></script>
+	<script type="text/javascript" src='static/js/d3.geo.tile.min.js'></script>
+	<script type="text/javascript" src='static/js/d3-hexbin.js'></script>
+	<script type="text/javascript" src='static/js/topojson.js'></script>
+	<script type="text/javascript" src='static/js/cubehelix.js'></script>
+	<script type="text/javascript" src='static/js/sigma.min.js'></script>
+
+	<script type="text/javascript" src='static/js/mapbox.js'></script>
+	<script type="text/javascript" src='static/js/heatmap.js'></script>
+	<script type="text/javascript" src='static/js/leaflet-heatmap.js'></script>
+	<script type="text/javascript" src='static/js/leaflet-hexbin-layer.js'></script>
+
+	<script type="text/javascript" src='static/js/angular.min.js'></script>
+	<script type='text/javascript' src="static/js/angular-animate.js"></script>
+	<script type='text/javascript' src="static/js/angular-aria.js"></script>
+	<script type="text/javascript" src="static/js/angular-material.js"></script>
+
+	<script type="text/javascript" src='static/js/charts.js'></script>
+	<script type="text/javascript" src='static/js/factories.js'></script>
+	<script type="text/javascript" src='static/js/map-controller.js'></script>
+	<script type="text/javascript" src='static/js/chart-controller.js'></script>
+	<script type="text/javascript" src='static/js/graph-controller.js'></script>
+	<script type="text/javascript" src='static/js/app.js'></script>
+
+	<link rel="stylesheet" href="static/css/angular-material.css"/>
+	<link rel="stylesheet" type="text/css" href="static/css/tipsy.css">
+	<link rel="stylesheet" type="text/css" href='static/css/mapbox.css'></link>
+	<link rel="stylesheet" type="text/css" href='static/css/main.css'></link>
+	<link rel="stylesheet" type="text/css" href='static/css/tiles.css'></link>
+	<link rel="stylesheet" type="text/css" href='static/css/graph.css'></link>
+</head>
+<body ng-controller='MainController'>
+	<div id='primary-container'>
+		<div id='main-tabs-container'>
+			<md-content class='md-padding'>
+				<md-tabs md-dynamic-height='false' md-selected='0'>
+					<md-tab label='one'>
+						<md-tab-label>
+							Rides Crossfilter
+						</md-tab-label>
+						<md-tab-body class='md-padding'>
+							<div id='charts-container' ng-controller='ChartsController'>
+								<div id='far-left-container'>
+
+									<div id='bike-ride-charts'>
+										<div id='hour-chart-container' class='crossfilter-chart-container'>
+											<div id='hour-chart' class='crossfilter-chart'></div>
+											<div class='chart-title'>Hour</div>
+										</div>
+										<div id='date-chart-container' class='crossfilter-chart-container'>
+											<div id='date-chart' class='crossfilter-chart'></div>
+											<div class='chart-title'>Date</div>
+										</div>
+										<div id='duration-chart-container' class='crossfilter-chart-container'>
+											<div id='duration-chart' class='crossfilter-chart'></div>
+											<div class='chart-title'>Duration</div>
+										</div>
+									</div>
+								</div>
+
+								<div id='windows-container'>
+									<div id='scatterplot' class='crossfilter-scatter'>
+										<svg />
+									</div>
+
+									<div class='map-container'></div>
+								</div>
+
+								
+							</div>
+						</md-tab-body>
+					</md-tab>
+
+					<md-tab label='one'>
+						<md-tab-label>
+							Graph
+						</md-tab-label>
+						
+					</md-tab>
+
+					<md-tab label='three'>
+						<md-tab-label>
+							Station Map
+						</md-tab-label>
+						
+					</md-tab>
+				</md-tabs>
+			</md-content>
+		</div>
+	</div>
+</body>
+</html>
