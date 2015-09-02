@@ -17,3 +17,8 @@ A nice git set-up tutorial are written nicely by one of my profs, Dr. Kooima, [h
     - ``` git remote show origin ``` shows the info of the master branch you are working from
     - ``` git branch --set-upstream master= origin/master``` explicitly setting origin master
 
+
+* Useful and related stackoverflow/blog pages.
+    - [pull/merge branch](http://stackoverflow.com/questions/10298291/cannot-push-to-github-keeps-saying-need-merge)
+    - [fetch and merge, don't pull [branches] ](http://longair.net/blog/2009/04/16/git-fetch-and-merge/)
+
