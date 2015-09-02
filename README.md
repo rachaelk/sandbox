@@ -5,11 +5,13 @@ A nice git set-up tutorial are written nicely by one of my profs, Dr. Kooima, [h
  * Get a local version of the repo. You can do one of two things: 
     1. Easiest: Clone this repository on your desktop or wherever you want to place it. (Check right-hand side of the repo or just "git clone https://github.com/rachaelk/sandbox").
     2. Go to your terminal (Powershell), cd into whichever base directory you want to use, and make a new directory ("mkdir sandbox"). Then write "git init" and set the upstream to this repo.
-  
+ 
+## Fundamentals
  * Git basic operations (in order)
-    1. git add .
-    2. git commit -a "Write modifications to code here."
-    3. git push origin master
+    1. ```git add .```
+    2. ```git commit -m "Write modifications to code here."```
+    3. ```git push origin master```
+        * 'origin master' is needed only really the first time..you can set it yourself.
 
 * Other useful commands
     - ``` git status ``` outputs status of files (changes made, modifications pushed or not pushed, etc.)
