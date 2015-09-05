@@ -1,0 +1,268 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	width: 800px;
+	height: 600px;
+}
+
+.leaflet-control-attribution {
+	display: none;
+}
+
+md-tab-content {
+	height: 1200px;
+}
+
+/* MARKERS */
+
+.station-marker {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	stroke: black;
+	opacity: .5;
+	fill: orange;
+	cursor: pointer;
+	z-index: 9000 !important;
+}
+
+.station-marker:hover {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	stroke: black;
+	opacity: 1;
+	fill: orange;
+	cursor: pointer;
+	z-index: 9001 !important;
+}
+
+.station-marker.station-clicked {
+	opacity: 1;
+	stroke-width: 2;
+	z-index: 9002 !important;
+}
+
+/* TOOLTIPS */
+
+
+
+/* TABS */
+
+#primary-container {
+	width: 100%;
+}
+
+md-content {
+	background-color: transparent !important;
+}
+
+md-content md-tabs {
+	background: #f6f6f6;
+	border: 1px solid #e1e1e1;
+}
+
+md-content md-tabs md-tabs-canvas {
+	background: white;
+}
+
+md-content h1:first-child {
+	margin-top: 0;
+}
+
+#crossfilter-custom-container {
+	padding-top: 10px;
+}
+
+/* CHARTS */
+
+#bike-ride-charts {
+	width: 270px;
+	float: left;
+	padding-left: 10px;
+}
+
+#far-left-container {
+	float: left;
+	margin: 0 5px;
+}
+
+#settings-container {
+	margin: 5px;
+	padding: 5px;
+	border-bottom: 1px solid #171;
+	height: 35px;
+	width: 280px;
+}
+
+#settings-container .radio-container {
+	width: 247px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#settings-container .radio-button {
+	margin: 5px;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+#weather-charts {
+	margin-top: 20px;
+	float: left;
+}
+
+/*.crossfilter-chart {
+	display: inline-block;
+	height: 150px;
+	margin-bottom: 20px;
+}*/
+
+.background.bar {
+	/* color of bars not selected by brush */
+	fill: #ccc;
+}
+
+#bike-ride-charts .foreground.bar {
+	/* selected bars */
+	fill: #558FF2;
+}
+
+#weather-charts .foreground.bar {
+	/* selected bars */
+	fill: #651FFF;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.brush rect.extent {
+	fill: steelblue;
+	fill-opacity: .125;
+}
+
+#hour-chart-container,
+#date-chart-container,
+#duration-chart-container,
+#subscribed-chart-container {
+	/* nothing here for the moment */
+}
+
+#hour-chart {
+	width: 260px;
+}
+
+#date-chart {
+	width: 260px;
+}
+
+#duration-chart {
+	width: 260px;
+}
+
+#subscribed-chart {
+	width: 75px;
+}
+
+#subscribed-chart .axis path, #subscribed-chart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.crossfilter-chart-container {
+	display: inline-block;
+}
+
+.chart-title {
+	text-align: center;
+}
+
+/* GRAPHS */
+
+#windows-container {
+	float: left;
+	width: 1050px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+#scatterplot {
+	float: left;
+	width: 500px;
+	height: 500px;
+	margin-right: 10px;
+	border: 1px solid #444;
+}
+
+#scatterplot .overlay {
+	fill: none;
+	pointer-events: all;
+}
+
+.map-container .map {
+	border: 1px solid black;
+}
+
+
+/* BLOCK GROUPS */
+
+#map-plot {
+	float: left;
+	width: 500px;
+	height: 500px;
+	margin: 0px 10px;
+	border: 1px solid #444;
+}
+
+#map-plot .overlay {
+	fill: white;
+	pointer-events: all;
+}
+
+.feature {
+	fill: #ccc;
+	stroke: white;
+	/*stroke-width: 1.5px;*/
+}
+
+/*.feature:hover {
+	fill: orange;
+}
+
+.feature.selected {
+	fill: #333;
+}*/
+
+.minimap {
+	stroke: #777;
+	fill: #aaa;
+	opacity: 0.4;
+}
+
+
+/* HEATMAP */
+
+#heatmap-container {
+	/*display: none;*/
+	height: 600px;
+	width: 600px;
+	/*opacity: 0.6;*/
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	margin: 11px 0px 0px 11px;
+	z-index: -1;
+}
