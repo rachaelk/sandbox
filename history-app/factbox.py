@@ -25,11 +25,21 @@ def obtainNewFact(dlist_facts):
 	dlist_facts[4].append(raw_input('\nBook title >> '))
 	dlist_facts[5].append(raw_input('\nAuthor >> '))
 	
-	
+def dbCount():
+	query = "\
+		SELECT COUNT(id) \
+		FROM facts;"
+	res= db_session.execute(query).fetchall()[0]; # number of elements in
+	return res[0]
+
 
 def main():
 
 	print "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+
+	count = dbCount();
+	print type(count)
+	print count
 	
 	dlist_facts = [[], [], [], [], [], []]
 
@@ -71,17 +81,23 @@ def main():
 
 			
 			facts[col][k] = new_info;
-			edit = raw_input("Would you like to continue editing?[y/n] >> ")
+			edit = raw_input("\nWould you like to continue editing?[y/n] >> ")
 
 		print facts;
 		facts['date_begin'] = pd.to_datetime(facts['date_begin'])
 		facts['date_end']   = pd.to_datetime(facts['date_end'])
 
 		print facts;
+		count = count +1;
+		
+		facts['id']=list(range(count, count +len(dlist_facts[0])))
 
-		cont = raw_input("\nLook okay to dump?")
-		if cont[0]=='y':
+
+
+		cont = raw_input("\n\nLook okay to dump? >> ")
+		if ((cont[0]=='y') & (len(cont)>0)):
 			facts.to_sql(name ='facts', con = engine, if_exists = 'append', index = False)
+
 
 if __name__ == '__main__': 
     main()
