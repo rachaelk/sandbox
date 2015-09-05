@@ -1,6 +1,8 @@
 import random
 import math
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Yesterday created a Bernoulli trial simulation, whereby the user could input the Bernoulli parameter
 #and generate any number of realizations of i.i.d. random variables having this common distribution.
 #Clearly the method employed generalizes to any discrete distribution...simple to write a program
@@ -17,6 +19,15 @@ import math
 #Again, same game.  User inputs number of trials and a decay parameter, and is able to view the 
 #resulting sample.
 
+##############################################
+# FUNCTION: ExponentialTrial
+# PARAMETERS:
+# 		n     ~ total number of samples
+# 		param ~ rate of success
+# PURPOSE:
+#   This function generates n realizations of a Bernoulli trial with rate of success param.
+# RETURNS: 
+# 		ExpTrial ~ list of the n realizations of the simulation 
 def ExponentialTrial(n, param):
 	ExpTrial = []
 	for i in range(n):
@@ -26,7 +37,7 @@ def ExponentialTrial(n, param):
 n = int(input("Please input the desired number of trials: "))
 param = float(input("Please input the theoretic decay parameter, lambda, governing the distribution: "))
 
-print sum(ExponentialTrial(n,param))/len(ExponentialTrial(n,param))
+print sum(ExponentialTrial(n,param))/len(ExponentialTrial(n,param)) # get rid of print statements
 
 #Function outputs the entire sample random vector, while providing the experimental mean.  Note that, given
 #a decay parameter lambda, the mean ought to be 1/lambda.
@@ -39,16 +50,32 @@ print sum(ExponentialTrial(n,param))/len(ExponentialTrial(n,param))
 #to rectangular to retrieve our pair of independent, Normal(0,1) random variables.  Conversion to 
 #Normal(mu, sigma^2) is straightforward; namely, if X ~ Normal(0,1), then Y = aX + b ~ Normal(b, a^2).
 
+##### ^^^!!!!!
+# If there are more conversions to be done or expetected to be desired by user, program them yourself.
+# User doesn't know what s/he wants, and if something's simple and progeammable, it'll prob be requested
+# later on. Instead, just do it and impress them (or they'll have expected you to have added that, in which case 
+# you just didn't unimpress them).	
 
-
-def NormalTrial(m,mu,sigma):
+##############################################
+# FUNCTION: NormTrial
+# PARAMETERS:
+# 		m     ~ total number of samples
+#       mu    ~ theoretic average
+# 		sigma ~ theoretic stdev
+# PURPOSE:
+#   This function generates n realizations of a Bernoulli trial with rate of success param.
+# RETURNS: 
+# 		NormTrial ~ list of the n realizations of the simulation 
+def NormalTrial(m,mu,sigma):  # why m and not n?
 
 	NormTrial = []
 	
 	for i in range(m):
 			r_squared = -2*math.log(random.random())
 			theta = 2*math.pi*random.random()
-			
+			# simulate a pair of uniformly distributed random variables in the space (0,1)
+			# then convert into Expectation 1/2,  Unif(0,2pi), 
+			# then convert from polar to rectangular to rectangular to retrieve our pair of independent, Normal(0,1) random variables. 
 			NormTrial.append(sigma*math.sqrt(r_squared)*math.cos(theta) + mu)
 			NormTrial.append(sigma*math.sqrt(r_squared)*math.sin(theta) + mu)
 			
