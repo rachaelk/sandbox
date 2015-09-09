@@ -1,3 +1,5 @@
+import math
+
 #######################################
 # FUNCTION: IsPrime
 # PARAMETERS: 
@@ -15,7 +17,7 @@ def IsPrime(n):
 	bool = True
 	
 	if n > 3:
-		for i in range(2,n):
+		for i in range(2,int(math.floor(math.sqrt(n)))):
 			if (n % i) == 0:
 				bool = False
 				break
