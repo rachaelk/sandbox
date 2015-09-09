@@ -40,12 +40,11 @@ def PrimeSieve(n):
 	Nums = range(2,n+1)
 	
 	for i in Nums:
-		if IsPrime(i) == True :
-			for j in range(2,n/i + 1):
-				if i*j in Nums:
-					Nums.remove(i*j)
-			#print Nums
-			#print "\n\n"
+		for j in range(2,n/i + 1):
+			if i*j in Nums:
+				Nums.remove(i*j)
+		#print Nums
+		#print "\n\n"
 			
 	return Nums
 	
